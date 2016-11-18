@@ -4,41 +4,94 @@ package components;
  * Created by thomas on 11/13/16.
  */
 public class Engine {
+    private String name;
     private int cylinders;
-    private int horsepower;
-
-    private static boolean IS_VALID_CYLINDERS(int cyl) {
-        if ((cyl >3) && (cyl < 13) && (cyl % 2 == 0))
-            return true;
-        return false;
-    }
+    private double horsepower;
+    private double displacement;
 
     public Engine() {
-        cylinders = 6;
-        horsepower = 380;
+        setCylinders(6);
     }
     public Engine(int cyl) {
-        if (IS_VALID_CYLINDERS(cyl))
-            System.out.print("aye");
-        else
-            System.out.print("nah");
+        setCylinders(cyl);
+    }
+
+    public void setCylinders(int cylinders) {
+        this.cylinders = cylinders;
+        switch (cylinders) {
+            case 2:
+                setName("Honda GX200");
+                setHorsepower(5.5);
+                setDisplacement(11.9607);
+                break;
+            case 3:
+                setName("BMW B38K15T0");
+                setHorsepower(400);
+                setDisplacement(91);
+                break;
+            case 4:
+                setName("Porsche 718 Boxster 4-Cylinder");
+                setHorsepower(300);
+                setDisplacement(152.559);
+                break;
+            case 5:
+                setName("Audi 2.5L 5-Cylinder");
+                setHorsepower(360);
+                setDisplacement(152.559);
+                break;
+            case 6:
+                setName("Hyundai Genesis 3.8L V6");
+                setHorsepower(311);
+                setDisplacement(231.89);
+                break;
+            case 7:
+                setName("AGCO Sisu 7-cylinder diesel engine");
+                setHorsepower(500);
+                setDisplacement(610.237);
+                break;
+            case 8:
+                setName("Ford Shelby GT500");
+                setHorsepower(662);
+                setDisplacement(353.938);
+                break;
+            case 10:
+                setName("Porshe Carera GT");
+                setHorsepower(605);
+                setDisplacement(347.835);
+                break;
+            case 12:
+                setName("TVR Speed 12");
+                setHorsepower(1000);
+                setDisplacement(469.883);
+                break;
+        }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getHorsepower() {
+        return horsepower;
+    }
+
+    public double getDisplacement() {
+        return displacement;
     }
 
     public int getCylinders() {
         return cylinders;
     }
 
-    public void setCylinders(int cylinders) {
-        if (IS_VALID_CYLINDERS(cylinders)){
-            this.cylinders = cylinders;
-        }
-    }
-
-    public int getHorsepower() {
-        return horsepower;
-    }
-
-    public void setHorsepower(int horsepower) {
+    private void setHorsepower(double horsepower) {
         this.horsepower = horsepower;
+    }
+
+    private void setName (String name) {
+        this.name = name;
+    }
+
+    private void setDisplacement (double displacement) {
+        this.displacement = displacement;
     }
 }
