@@ -29,7 +29,9 @@ public class Engine {
     }
 
     public void setCylinders(int cylinders) {
-        this.cylinders = cylinders;
+        if (IS_VALID_CYLINDERS(cylinders)){
+            this.cylinders = cylinders;
+        }
     }
 
     public int getHorsepower() {
