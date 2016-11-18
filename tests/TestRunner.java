@@ -9,7 +9,7 @@ import org.junit.runner.notification.Failure;
  */
 public class TestRunner {
     public static void main(String[] args) {
-        Result result = JUnitCore.runClasses(EngineTest.class);
+        Result result = JUnitCore.runClasses(EngineTests.class, BodyTests.class);
 
         for (Failure failure : result.getFailures()) {
             System.out.println(failure.toString());

@@ -8,7 +8,7 @@ import org.junit.Test;
 /**
  * Created by thomas on 11/17/16.
  */
-public class EngineTest {
+public class EngineTests {
     private String NAME = "Ford Shelby GT500";
     private double DISPLACEMENT = 353.938;
     private double HORSEPOWER = 662;
